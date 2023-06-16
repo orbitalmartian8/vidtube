@@ -63,3 +63,105 @@ body {
   margin-top: 20px;
   color: #333333;
 }
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  flex-grow: 1;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333333;
+  margin-right: 20px;
+}
+
+.navbar-toggle {
+  position: relative;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: #dddddd;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.toggle-label:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-input:checked ~ .toggle-label:before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 600px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    margin-left: auto;
+  }
+
+  .toggle-label {
+    width: 30px;
+  }
+
+  .toggle-label:before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .toggle-input:checked ~ .toggle-label:before {
+    transform: translateX(10px);
+  }
+
+  .navbar-toggle,
+  .toggle-label {
+    height: 15px;
+  }
+
+  .navbar-toggle:hover .toggle-label,
+  .toggle-label:hover {
+    background-color: #dddddd;
+  }
+
+  .navbar-toggle:hover .toggle-label:before,
+  .toggle-label:hover:before {
+    background-color: #ffffff;
+  }
+}
