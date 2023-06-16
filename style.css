@@ -17,3 +17,49 @@
 .video-description {
   margin-bottom: 10px;
 }
+
+
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#videoContainer {
+  margin: 50px auto;
+  max-width: 800px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#videoPlayer {
+  width: 100%;
+  height: auto;
+}
+
+#videoInfo {
+  padding: 20px;
+}
+
+#videoTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+#videoMetadata {
+  margin-top: 10px;
+  color: #666666;
+}
+
+#videoUploader, #videoUploadDate {
+  margin: 0;
+  padding: 0;
+}
+
+#videoDescription {
+  margin-top: 20px;
+  color: #333333;
+}
