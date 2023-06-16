@@ -6,22 +6,16 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <h1>Vidtube</h1>
-      </div>
-      <div class="navbar-links">
-        <a href="#">Home</a>
-        <a href="#">Videos</a>
-        <a href="#">Upload</a>
-        <a href="#">Profile</a>
-      </div>
-      <div class="navbar-toggle">
-        <input type="checkbox" id="toggle" class="toggle-input">
-        <label for="toggle" class="toggle-label"></label>
-      </div>
-    </nav>
-  </header>
+  <nav>
+    <h1>Vidtube</h1>
+    <label class="switch">
+      <input type="checkbox" id="dark-mode-toggle">
+      <span class="slider"></span>
+    </label>
+  </nav>
+</header>
+
+  
   <div id="videoList"></div>
 
   <script src="script.js"></script>
