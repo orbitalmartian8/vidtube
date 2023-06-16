@@ -1,6 +1,7 @@
 {
   "videos": [
     {
+      "id": "1",
       "title": "Video 1",
       "upload_date": "2023-06-15 10:30:00",
       "description": "This is the first video",
@@ -8,6 +9,7 @@
       "thumbnail_file": "thumbnails/thumbnail1.jpg"
     },
     {
+      "id": "2",
       "title": "Video 2",
       "upload_date": "2023-06-14 14:45:00",
       "description": "This is the second video",
