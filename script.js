@@ -61,7 +61,7 @@ function displayVideos(videos) {
     videoContainer.className = "video-container";
 
     const videoLink = document.createElement("a");
-    videoLink.href = "index.html?id=" + video.id;
+    videoLink.href = "video.html?id=" + video.id;
     videoContainer.appendChild(videoLink);
 
     const videoThumbnail = document.createElement("img");
