@@ -5,9 +5,18 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="videoContainer"></div>
+  <div id="videoContainer">
+    <video id="videoPlayer" controls></video>
+    <div id="videoInfo">
+      <h2 id="videoTitle"></h2>
+      <div id="videoMetadata">
+        <p id="videoUploader"></p>
+        <p id="videoUploadDate"></p>
+      </div>
+      <p id="videoDescription"></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
-  <script src="ui.js"></script>
 </body>
 </html>
