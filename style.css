@@ -1,0 +1,19 @@
+.video-thumbnail {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+}
+
+.video-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.video-date {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.video-description {
+  margin-bottom: 10px;
+}
