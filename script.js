@@ -1,21 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Fetch video data from JSON file
-  fetch("videos.json")
-    .then(response => response.json())
-    .then(data => {
-      const videoId = getVideoIdFromUrl();
-      if (videoId) {
-        const video = data.videos.find(v => v.id === videoId);
-        if (video) {
-          displayVideo(video);
-        } else {
-          displayVideos(data.videos);
-        }
-      } else {
-        displayVideos(data.videos);
-      }
-    })
-    .catch(error => console.error(error));
+  const videoId = getVideoIdFromUrl();
+  if (videoId) {
+    fetchVideoData(videoId);
+  }
 });
 
 function getVideoIdFromUrl() {
@@ -23,69 +10,32 @@ function getVideoIdFromUrl() {
   return urlParams.get("id");
 }
 
-function displayVideo(video) {
-  const videoContainer = document.createElement("div");
-  videoContainer.className = "video-container";
-
-  const videoPlayer = document.createElement("video");
-  videoPlayer.className = "video-player";
-  videoPlayer.src = video.video_file;
-  videoPlayer.controls = true;
-  videoContainer.appendChild(videoPlayer);
-
-  const videoTitle = document.createElement("h2");
-  videoTitle.className = "video-title";
-  videoTitle.textContent = video.title;
-  videoContainer.appendChild(videoTitle);
-
-  const videoDate = document.createElement("p");
-  videoDate.className = "video-date";
-  videoDate.textContent = "Uploaded on " + formatDateTime(video.upload_date);
-  videoContainer.appendChild(videoDate);
-
-  const videoDescription = document.createElement("p");
-  videoDescription.className = "video-description";
-  videoDescription.textContent = video.description;
-  videoContainer.appendChild(videoDescription);
-
-  const videoList = document.getElementById("videoList");
-  videoList.innerHTML = "";
-  videoList.appendChild(videoContainer);
+function fetchVideoData(videoId) {
+  fetch("videos.json")
+    .then(response => response.json())
+    .then(data => {
+      const video = data.videos.find(v => v.id === videoId);
+      if (video) {
+        displayVideo(video);
+      } else {
+        console.error("Video not found");
+      }
+    })
+    .catch(error => console.error(error));
 }
 
-function displayVideos(videos) {
-  const videoList = document.getElementById("videoList");
+function displayVideo(video) {
+  const videoPlayer = document.getElementById("videoPlayer");
+  const videoTitle = document.getElementById("videoTitle");
+  const videoUploader = document.getElementById("videoUploader");
+  const videoUploadDate = document.getElementById("videoUploadDate");
+  const videoDescription = document.getElementById("videoDescription");
 
-  videos.forEach(video => {
-    const videoContainer = document.createElement("div");
-    videoContainer.className = "video-container";
-
-    const videoLink = document.createElement("a");
-    videoLink.href = "video.html?id=" + video.id;
-    videoContainer.appendChild(videoLink);
-
-    const videoThumbnail = document.createElement("img");
-    videoThumbnail.className = "video-thumbnail";
-    videoThumbnail.src = video.thumbnail_file;
-    videoLink.appendChild(videoThumbnail);
-
-    const videoTitle = document.createElement("h2");
-    videoTitle.className = "video-title";
-    videoTitle.textContent = video.title;
-    videoContainer.appendChild(videoTitle);
-
-    const videoDate = document.createElement("p");
-    videoDate.className = "video-date";
-    videoDate.textContent = "Uploaded on " + formatDateTime(video.upload_date);
-    videoContainer.appendChild(videoDate);
-
-    const videoDescription = document.createElement("p");
-    videoDescription.className = "video-description";
-    videoDescription.textContent = video.description;
-    videoContainer.appendChild(videoDescription);
-
-    videoList.appendChild(videoContainer);
-  });
+  videoPlayer.src = video.video_file;
+  videoTitle.textContent = video.title;
+  videoUploader.textContent = "Uploaded by: " + video.uploader;
+  videoUploadDate.textContent = "Uploaded on: " + formatDateTime(video.upload_date);
+  videoDescription.textContent = video.description;
 }
 
 function formatDateTime(dateTime) {
