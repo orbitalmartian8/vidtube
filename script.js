@@ -30,7 +30,7 @@ function displayVideo(video) {
     autoplay: false,
     preload: "auto",
   });
-  videoPlayer.src(video.video_file);
+  videoPlayer.src({ src: video.video_file, type: video.mime_type });
   videoPlayer.poster(video.thumbnail);
 
   const videoTitle = document.getElementById("videoTitle");
