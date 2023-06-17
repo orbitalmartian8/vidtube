@@ -3,7 +3,7 @@
 <head>
   <title>Video Player</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/video.js/dist/video-js.min.css">
+  <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -23,18 +23,25 @@
       </div>
     </nav>
   </header>
-  <div class="videoContainer">
-    <div class="video-player-container">
-      <video id="videoPlayer" class="video-js vjs-default-skin"></video>
-    </div>
-    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-      const videoId = getVideoIdFromUrl();
-      if (videoId) {
-        fetchVideoData(videoId);
-      }
-    </script>
+<video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+    <source src="https://videos.danksquad.org/download/videos/925e9a4e-7e64-4b4b-a50e-81cbaec98edb-1088.mp4" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
     <div id="videoInfo">
       <h2 id="videoTitle"></h2>
       <div id="videoMetadata">
@@ -44,5 +51,7 @@
       <p id="videoDescription"></p>
     </div>
   </div>
+
+   <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
 </body>
 </html>
