@@ -1,41 +1,46 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const videoId = getVideoIdFromUrl();
-  if (videoId) {
-    fetchVideoData(videoId);
-  }
+  const toggleSwitch = document.getElementById("toggle");
+  toggleSwitch.addEventListener("change", toggleTheme);
+
+  fetchVideoData();
 });
 
-function getVideoIdFromUrl() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get("id");
+function toggleTheme(event) {
+  const body = document.body;
+  if (event.target.checked) {
+    body.classList.add("dark-mode");
+  } else {
+    body.classList.remove("dark-mode");
+  }
 }
 
-function fetchVideoData(videoId) {
+function fetchVideoData() {
   fetch("videos.json")
     .then(response => response.json())
     .then(data => {
-      const video = data.videos.find(v => v.id === videoId);
-      if (video) {
-        displayVideo(video);
-      } else {
-        console.error("Video not found");
-      }
+      displayVideoList(data.videos);
     })
     .catch(error => console.error(error));
 }
 
-function displayVideo(video) {
-  const videoPlayer = document.getElementById("videoPlayer");
-  const videoTitle = document.getElementById("videoTitle");
-  const videoUploader = document.getElementById("videoUploader");
-  const videoUploadDate = document.getElementById("videoUploadDate");
-  const videoDescription = document.getElementById("videoDescription");
+function displayVideoList(videos) {
+  const videoListContainer = document.getElementById("videoList");
 
-  videoPlayer.src = video.video_file;
-  videoTitle.textContent = video.title;
-  videoUploader.textContent = "Uploaded by: " + video.uploader;
-  videoUploadDate.textContent = "Uploaded on: " + formatDateTime(video.upload_date);
-  videoDescription.textContent = video.description;
+  videos.forEach(video => {
+    const videoItem = document.createElement("div");
+    videoItem.className = "video-item";
+    videoItem.innerHTML = `
+      <a href="video.html?id=${video.id}">
+        <img class="thumbnail" src="${video.thumbnail_file}" alt="Video Thumbnail">
+        <div class="video-info">
+          <h3 class="video-title">${video.title}</h3>
+          <p class="video-uploader">Uploaded by: ${video.uploader}</p>
+          <p class="video-upload-date">Uploaded on: ${formatDateTime(video.upload_date)}</p>
+        </div>
+      </a>
+    `;
+    videoListContainer.appendChild(videoItem);
+  });
 }
 
 function formatDateTime(dateTime) {
