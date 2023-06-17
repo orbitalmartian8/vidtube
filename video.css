@@ -31,7 +31,8 @@
 
 .video-js {
   display: block;
-  margin: 0 auto;
+  margin: auto;
+  justify-content: center;
 }
 
 #videoDescription {
