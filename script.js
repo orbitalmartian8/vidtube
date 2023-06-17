@@ -25,27 +25,24 @@ function fetchVideoData(videoId) {
 }
 
 function displayVideo(video) {
-  const videoPlayer = videojs("videoPlayer", {}, function() {
-    // Player is ready
+  const videoPlayer = videojs("videoPlayer", {
+    controls: true,
+    autoplay: false,
+    preload: "auto",
   });
+  videoPlayer.src(video.video_file);
+  videoPlayer.poster(video.thumbnail);
 
   const videoTitle = document.getElementById("videoTitle");
   const videoUploader = document.getElementById("videoUploader");
   const videoUploadDate = document.getElementById("videoUploadDate");
   const videoDescription = document.getElementById("videoDescription");
 
-  const videoSrc = video.video_file; // Assuming the video_file property contains the video source URL
-
-  // Set the source URL dynamically
-  videoPlayer.src({ src: videoSrc, type: "video/mp4" });
-  videoPlayer.load();
-
   videoTitle.textContent = video.title;
   videoUploader.textContent = "Uploaded by: " + video.uploader;
   videoUploadDate.textContent = "Uploaded on: " + formatDateTime(video.upload_date);
   videoDescription.textContent = video.description;
 }
-
 
 function formatDateTime(dateTime) {
   const options = { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" };
