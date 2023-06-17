@@ -25,22 +25,23 @@
       </div>
     </nav>
   </header>
-  <div class="video-player">
-    <video id="videoPlayer" class="video-js vjs-default-skin" controls>
-      <!-- Add the following line to create an empty source tag -->
-      <source src="" type="video/mp4">
-    </video>
-  </div>
-
-  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-    <div id="videoInfo">
-      <h2 id="videoTitle"></h2>
-      <div id="videoMetadata">
-        <p id="videoUploader"></p>
-        <p id="videoUploadDate"></p>
-      </div>
-      <p id="videoDescription"></p>
+  <div class="videoContainer">
+    <div class="video-player">
+      <video id="videoPlayer" class="video-js vjs-default-skin" controls>
+        <!-- Add the following line to create an empty source tag -->
+        <source src="" type="video/mp4">
+      </video>
     </div>
+  
+    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+      <div id="videoInfo">
+        <h2 id="videoTitle"></h2>
+        <div id="videoMetadata">
+          <p id="videoUploader"></p>
+          <p id="videoUploadDate"></p>
+        </div>
+        <p id="videoDescription"></p>
+      </div>
   </div>
 
   <script src="script.js"></script>
