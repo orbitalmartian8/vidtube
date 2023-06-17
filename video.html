@@ -23,7 +23,18 @@
     </nav>
   </header>
   <div id="videoContainer">
-    <video id="videoPlayer" controls></video>
+    <!--<video id="videoPlayer" controls></video>-->
+    <div class="custom-video-player">
+  <video id="my-video" controls>
+    <source src="path/to/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="controls">
+    <button id="play-pause-btn">&#9658;</button>
+    <input id="progress-bar" type="range" min="0" max="100" step="0.1">
+  </div>
+</div>
+
     <div id="videoInfo">
       <h2 id="videoTitle"></h2>
       <div id="videoMetadata">
