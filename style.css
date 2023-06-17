@@ -25,7 +25,7 @@ body {
   margin-bottom: 10px;
 }
 
-#videoContainer {
+.videoContainer {
   margin: 50px auto;
   max-width: 800px;
   background-color: #ffffff;
