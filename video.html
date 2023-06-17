@@ -3,6 +3,9 @@
 <head>
   <title>Video Player</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+
 </head>
 <body>
   <header>
@@ -23,7 +26,15 @@
     </nav>
   </header>
   <div id="videoContainer">
-    <video id="videoPlayer" controls></video>
+    <!--<video id="videoPlayer" controls></video>-->
+    <div class="video-player">
+      <video id="videoPlayer" class="video-js vjs-default-skin" controls>
+        <source src="path_to_video_file.mp4" type="video/mp4">
+        <!-- Add more source tags for different video formats if needed -->
+      </video>
+    </div>
+
+  <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
     <div id="videoInfo">
       <h2 id="videoTitle"></h2>
       <div id="videoMetadata">
