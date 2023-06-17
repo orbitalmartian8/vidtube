@@ -1,59 +1,16 @@
+/* Theme: github-dark-orange */
+
+/* Body */
 body {
-  background-color: #f9f9f9;
+  background-color: #1b1f23;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* .video-thumbnail {
-  width: 200px;
-  height: 150px;
-  margin: 10px;
-}
-
-.video-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.video-date {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.video-description {
-  margin-bottom: 10px;
-}
-
-#videoInfo {
-  padding: 20px;
-}
-
-#videoTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-}
-
-#videoMetadata {
-  margin-top: 10px;
-  color: #666666;
-}
-
-#videoUploader,
-#videoUploadDate {
-  margin: 0;
-  padding: 0;
-}
-
-#videoDescription {
-  margin-top: 20px;
-  color: #333333;
-} */
-
+/* Header */
 header {
-  background-color: #ffffff;
+  background-color: #1b1f23;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
 }
@@ -70,6 +27,7 @@ header {
 
 .navbar-logo h1 {
   margin: 0;
+  color: #ffffff;
 }
 
 .navbar-links {
@@ -78,7 +36,7 @@ header {
 
 .navbar-links a {
   text-decoration: none;
-  color: #333333;
+  color: #ffffff;
   margin-right: 20px;
 }
 
@@ -154,41 +112,47 @@ header {
   }
 }
 
-#videoList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.video-item {
-  width: 300px;
-  margin: 10px;
+/* Video Container */
+.videoContainer {
+  margin: 50px auto;
+  max-width: 800px;
   background-color: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  text-align: center;
+  padding: 20px;
 }
 
-.thumbnail {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+/* Video Player */
+#my-video {
+  display: block;
+  margin: 0 auto;
 }
 
-.video-info {
-  margin-bottom: 10px;
+/* Video Info */
+#videoInfo {
+  color: #ffffff;
+  padding: 20px;
 }
 
-.video-title {
-  font-size: 18px;
+#videoTitle {
+  font-size: 24px;
+  font-weight: bold;
   margin: 0;
+  padding: 0;
+  color: #ffffff;
 }
 
-.video-uploader,
-.video-upload-date {
-  color: #666666;
+#videoMetadata {
+  margin-top: 10px;
+  color: #cccccc;
+}
+
+#videoUploader,
+#videoUploadDate {
   margin: 0;
+  padding: 0;
 }
 
-/* Add your existing CSS styles here */
+#videoDescription {
+  margin-top: 20px;
+  color: #cccccc;
+}
