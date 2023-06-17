@@ -34,7 +34,10 @@ function displayVideo(video) {
   const videoUploadDate = document.getElementById("videoUploadDate");
   const videoDescription = document.getElementById("videoDescription");
 
-  videoPlayer.src({ src: video.video_file, type: "video/mp4" });
+  const videoSrc = video.video_file; // Assuming the video_file property contains the video source URL
+
+  // Set the source URL dynamically
+  videoPlayer.src({ src: videoSrc, type: "video/mp4" });
   videoPlayer.load();
 
   videoTitle.textContent = video.title;
@@ -42,6 +45,7 @@ function displayVideo(video) {
   videoUploadDate.textContent = "Uploaded on: " + formatDateTime(video.upload_date);
   videoDescription.textContent = video.description;
 }
+
 
 function formatDateTime(dateTime) {
   const options = { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" };
