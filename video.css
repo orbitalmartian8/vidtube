@@ -28,6 +28,11 @@
   padding: 0;
 }
 
+.video-js {
+  display: block;
+  margin: 0 auto;
+}
+
 #videoDescription {
   margin-top: 20px;
   color: #333333;
