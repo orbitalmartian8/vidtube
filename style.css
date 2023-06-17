@@ -1,15 +1,67 @@
+.video-thumbnail {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+}
+
+.video-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.video-date {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.video-description {
+  margin-bottom: 10px;
+}
+
+
 body {
   background-color: #f9f9f9;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s;
-  color: #333333;
 }
 
-body.dark-mode {
-  background-color: #222222;
-  color: #ffffff;
+#videoContainer {
+  margin: 50px auto;
+  max-width: 800px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#videoPlayer {
+  width: 100%;
+  height: auto;
+}
+
+#videoInfo {
+  padding: 20px;
+}
+
+#videoTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+#videoMetadata {
+  margin-top: 10px;
+  color: #666666;
+}
+
+#videoUploader, #videoUploadDate {
+  margin: 0;
+  padding: 0;
+}
+
+#videoDescription {
+  margin-top: 20px;
+  color: #333333;
 }
 
 header {
@@ -38,7 +90,7 @@ header {
 
 .navbar-links a {
   text-decoration: none;
-  color: inherit;
+  color: #333333;
   margin-right: 20px;
 }
 
@@ -85,45 +137,38 @@ header {
     margin-left: auto;
   }
 
-  .navbar-toggle .toggle-label {
-    background-color: #dddddd;
-    position: relative;
-    cursor: pointer;
-    border-radius: 10px;
+  .toggle-label {
+    width: 30px;
   }
 
-  .navbar-toggle .toggle-label:before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    transition: transform 0.3s;
+  .toggle-label:before {
+    width: 12px;
+    height: 12px;
   }
 
   .toggle-input:checked ~ .toggle-label:before {
-    transform: translateX(20px);
+    transform: translateX(10px);
   }
 
-  .navbar-links.open {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
+  .navbar-toggle,
+  .toggle-label {
+    height: 15px;
+  }
+
+  .navbar-toggle:hover .toggle-label,
+  .toggle-label:hover {
+    background-color: #dddddd;
+  }
+
+  .navbar-toggle:hover .toggle-label:before,
+  .toggle-label:hover:before {
     background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-links.open a {
-    display: block;
-    margin-bottom: 10px;
   }
 }
+
+
+
+/* Add your existing CSS styles here */
 
 #videoList {
   display: flex;
