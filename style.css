@@ -1,3 +1,10 @@
+body {
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .video-thumbnail {
   width: 200px;
   height: 150px;
@@ -18,15 +25,7 @@
   margin-bottom: 10px;
 }
 
-
-body {
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.videoContainer {
+#videoContainer {
   margin: 50px auto;
   max-width: 800px;
   background-color: #ffffff;
@@ -54,7 +53,8 @@ body {
   color: #666666;
 }
 
-#videoUploader, #videoUploadDate {
+#videoUploader,
+#videoUploadDate {
   margin: 0;
   padding: 0;
 }
@@ -166,10 +166,6 @@ header {
   }
 }
 
-
-
-/* Add your existing CSS styles here */
-
 #videoList {
   display: flex;
   flex-wrap: wrap;
@@ -206,3 +202,5 @@ header {
   color: #666666;
   margin: 0;
 }
+
+/* Add your existing CSS styles here */
