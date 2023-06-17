@@ -4,7 +4,6 @@
   <title>Video Player</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/video.js/dist/video-js.min.css">
-
 </head>
 <body>
   <header>
@@ -26,24 +25,24 @@
   </header>
   <div class="videoContainer">
     <div class="video-player-container">
-<!--       <video id="videoPlayer" class="video-js vjs-default-skin" controls>
-        <!-- Add the following line to create an empty source tag -->
-<!--         <source src="" type="video/mp4">
-      </video> -->
       <video id="videoPlayer" class="video-js vjs-default-skin"></video>
     </div>
-  
-    <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
-      <div id="videoInfo">
-        <h2 id="videoTitle"></h2>
-        <div id="videoMetadata">
-          <p id="videoUploader"></p>
-          <p id="videoUploadDate"></p>
-        </div>
-        <p id="videoDescription"></p>
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      const videoId = getVideoIdFromUrl();
+      if (videoId) {
+        fetchVideoData(videoId);
+      }
+    </script>
+    <div id="videoInfo">
+      <h2 id="videoTitle"></h2>
+      <div id="videoMetadata">
+        <p id="videoUploader"></p>
+        <p id="videoUploadDate"></p>
       </div>
+      <p id="videoDescription"></p>
+    </div>
   </div>
-  <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
-  <script src="script.js"></script>
 </body>
 </html>
