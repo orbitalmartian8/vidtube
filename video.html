@@ -25,14 +25,12 @@
       </div>
     </nav>
   </header>
-  <div id="videoContainer">
-    <!--<video id="videoPlayer" controls></video>-->
-    <div class="video-player">
-      <video id="videoPlayer" class="video-js vjs-default-skin" controls>
-        <source src="path_to_video_file.mp4" type="video/mp4">
-        <!-- Add more source tags for different video formats if needed -->
-      </video>
-    </div>
+  <div class="video-player">
+    <video id="videoPlayer" class="video-js vjs-default-skin" controls>
+      <!-- Add the following line to create an empty source tag -->
+      <source src="" type="video/mp4">
+    </video>
+  </div>
 
   <script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
     <div id="videoInfo">
