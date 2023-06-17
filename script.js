@@ -25,13 +25,18 @@ function fetchVideoData(videoId) {
 }
 
 function displayVideo(video) {
-  const videoPlayer = document.getElementById("videoPlayer");
+  const videoPlayer = videojs("videoPlayer", {}, function() {
+    // Player is ready
+  });
+
   const videoTitle = document.getElementById("videoTitle");
   const videoUploader = document.getElementById("videoUploader");
   const videoUploadDate = document.getElementById("videoUploadDate");
   const videoDescription = document.getElementById("videoDescription");
 
-  videoPlayer.src = video.video_file;
+  videoPlayer.src({ src: video.video_file, type: "video/mp4" });
+  videoPlayer.load();
+
   videoTitle.textContent = video.title;
   videoUploader.textContent = "Uploaded by: " + video.uploader;
   videoUploadDate.textContent = "Uploaded on: " + formatDateTime(video.upload_date);
